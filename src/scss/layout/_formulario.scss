@@ -1,0 +1,49 @@
+.formulario{
+    background-color: var(--blanco);
+    margin: -2rem auto 5rem auto;
+    width: 80%;
+    padding: 5rem;
+    select {
+        background-color: $blanco;
+        color: $negro;
+        border: 1px solid $negro;
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        width: 200px;
+    }    
+}
+
+.formulario fieldset{
+    border-radius: 13px;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    
+}
+
+@media (min-width: 768px) {
+    .campo__label{
+        flex: 0 0 9rem;
+        text-align: right;
+    }
+
+    .campo__field{
+        flex: 1;
+        border: .3px solid $negro;
+        border-radius: .5rem;
+    }
+
+    .campo__field--textarea{
+        height: 20rem;
+    }
+}
+
+
+.archivo-actual{
+    font-size: 1.6rem;
+    margin-left: 11rem;
+}

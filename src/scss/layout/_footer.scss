@@ -1,0 +1,38 @@
+.footer{
+    padding: calc($separacion / 2) 0;
+    background-color: $negro;
+    margin-bottom: 0;
+
+    .contenedor-footer{
+        padding-top: calc($separacion / 2);
+        .navegacion{
+            @include tablet{
+                display: flex;
+                column-gap: 2rem;
+            }
+            display: block;
+            text-align: center;
+            font-size: 1.8rem;
+            color: $blanco;
+            a{
+                color: $blanco;
+                &:hover{
+                    cursor: pointer;
+                    color: $gris;
+                }
+            }
+        }
+    }
+
+    .navegacion{
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+    }
+
+    .copyright{
+        color: $blanco;
+        text-align: center;
+    }
+
+}

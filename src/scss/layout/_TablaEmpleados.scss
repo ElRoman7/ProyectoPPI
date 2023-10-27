@@ -1,0 +1,39 @@
+.tabla-elimina {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+
+    thead {
+        background-color: $gris;
+        th {
+            color: $negro;
+            padding: 2rem;
+        }
+    }
+
+    td {
+        font-size: 1.8rem;
+        border: 1px solid $gris; // Línea divisora
+
+
+        &:first-child { // Estilo para el primer td (Id)
+            width: 10%;
+        }
+
+        &:nth-child(2) { // Estilo para el segundo td (Nombre y Apellidos)
+            width: 30%;
+        }
+        &:nth-child(3) { // Estilo para el segundo td (Correo)
+            width: 25%;
+        }
+        &:nth-child(4) { // Estilo para el segundo td (Rol)
+            width: 10%;
+        }
+
+        &:last-child { // Estilo para el último td (Acciones)
+            width: 25%;
+
+        }
+    }
+}
+
