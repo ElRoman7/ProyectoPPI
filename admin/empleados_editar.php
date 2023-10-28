@@ -17,27 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["id"])) {
         exit;
     }
 }
+
+require "templates/header.php";
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa01 - Editar Empleado</title>
-    <link rel="stylesheet" href="../build/css/app.css">
-</head>
-<body>
-    <header class="header">
-        <!-- Encabezado similar al de alta -->
-    </header>
-
+    <div class="titulo-pag">
+        <h2 class="no-margin">Editando Empleado</h2>
+    </div>
     <div class="contenedor">
         <a class="boton-verde botonNuevo" href="empleados_lista.php">Volver</a>
     </div>
     
     <main class="contenedor">
-        <form enctype="multipart/form-data" class="formulario" name="Forma01" method="post" action="empleados_actualizar.php">
+        <form enctype="multipart/form-data" class="formulario" name="Forma01" method="post" action="empleados_actualizar.php" id="miFormularioActualizar">
             <fieldset>
                 <legend>Información Personal</legend>
                 <input type="hidden" name="id" value="<?php echo $empleado['id']; ?>">
@@ -47,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["id"])) {
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="apellidos">Apellidos:</label>
-                    <input class="campo__field" type="text" name="apellidos" id="apellidos" value="<?php echo $empleado['apellidos'] ?>">
+                    <input class="campo__field" type="text" name="apellidos" id="apellidos" value="<?php echo $empleado['apellidos'] ?>" placeholder="Apellidos">
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="correo">Correo:</label>
@@ -79,9 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["id"])) {
             </fieldset>
         </form>
     </main>
-    <footer class="footer seccion">
-        <!-- Pie de página similar al de alta -->
-    </footer>
-    <script src="/build/js/bundle.min.js"></script>
-</body>
-</html>
+    <div id="mensajes-error" class="alerta"></div>
+<?php 
+require "templates/footer.php"
+?>

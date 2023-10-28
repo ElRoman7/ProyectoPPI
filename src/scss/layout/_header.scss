@@ -1,11 +1,11 @@
 /* Header */
 .header {
-  height: 250px;
-  background-color: $negro;
+  height: 12rem;
+  background-color: $grisOscuro;
   margin-top: 0;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
   .barra {
-    padding: 2rem 0;
+    // padding: 2rem 0;
     @include tablet{
       display: flex;
       justify-content: space-between;
@@ -38,9 +38,12 @@
     color: $gris;
     cursor: pointer;
   }
+}
+
+.titulo-pag{
   h2{
-    margin: 0;
     font-weight: 500;
-    color: $blanco;
   }
+  margin-bottom: -5rem;
+
 }

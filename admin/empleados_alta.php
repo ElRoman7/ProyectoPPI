@@ -1,54 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa01</title>
-    <link rel="stylesheet" href="../build/css/app.css">
-</head>
-<body>
-    <header class="header">
-        <div class="contenedor">
-            <div class="barra">
-                <a class="logo" href="empleados_lista.php">
-                    <h1 class="logo__nombre no-margin centrar-texto">Empresa<span class="logo__bold">01</span></h1>
-                </a>
 
-                <nav class="navegacion">
-                    <!-- <a href="empleados_elimina.php" class="navegacion__enlace">Elimina</a> -->
-                    <a href="empleados_alta.php" class="navegacion__enlace">Alta</a>
-                    <a href="empleados_lista.php" class="navegacion__enlace">Empleados</a>
-                </nav>
+<body>
+    <?php 
+        require "templates/header.php"
+    ?>
+    <div class="titulo-pag">
+        <h2 class="no-margin">Alta</h2>
+    </div>
+
+    <!-- <div id="mensajes-error" class="alerta error"></div>
+    Validacion Backend
+    <?php if(isset($errores) && !empty($errores)): ?>
+        <?php foreach($errores as $error): ?>
+            <div class="alerta error">
+                <?php echo $error; ?>
             </div>
-        </div>
-        <div class="header__texto">
-            <h2 class="no-margin">Alta</h2>
-        </div>
-    </header>
+        <?php endforeach?>
+    <?php endif; ?> -->
 
     <div class="contenedor">
         <a class="boton-verde botonNuevo" href="empleados_lista.php">Volver</a>
     </div>
     
     <main class="contenedor">
-        <form enctype="multipart/form-data" class="formulario" name="Forma01" method="post" action="empleados_salva.php">
+        <form enctype="multipart/form-data" class="formulario" name="Forma01" method="POST" action="empleados_salva.php"  id="miFormulario">
             <fieldset>
                 <legend>Información Personal</legend>
             <div class="campo">
                 <label class="campo__label" for="nombre">Nombre:</label>
-                <input class="campo__field" type="text" name="nombre" id="nombre" placeholder="Escribe Tu Nombre">
+                <input class="campo__field" type="text" name="nombre" id="nombre" placeholder="Escribe Tu Nombre" value="<?php echo $nombre; ?>">
             </div>
             <div class="campo">
                 <label class="campo__label" for="apellidos">Apellidos:</label>
-                <input class="campo__field" type="text" name="apellidos" id="apellidos" placeholder="Escribe Tu Apellidos">
+                <input class="campo__field" type="text" name="apellidos" id="apellidos" placeholder="Escribe Tu Apellidos" value="<?php echo $apellidos; ?>">
             </div>
             <div class="campo">
                 <label class="campo__label" for="correo">Correo:</label>
-                <input onblur="entra();" onfocus="sale();" class="campo__field" type="email" name="correo" id="correo" placeholder="Escribe tu Email">
+                <input onblur="entra();" onfocus="sale();" class="campo__field" type="email" name="correo" id="correo" placeholder="Escribe tu Email"value="<?php echo $email; ?>">
             </div>
             <div class="campo">
                 <label class="campo__label" for="pass">Contraseña:</label>
-                <input class="campo__field" type="password" name="pass" id="pass" placeholder="Escribe tu Contraseña">
+                <input class="campo__field" type="password" name="pass" id="pass" placeholder="Escribe tu Contraseña"value="<?php echo $pass; ?>">
             </div>
             <div class="campo">
                 <label class="campo__label" for="archivo">Archivo:</label>
@@ -64,20 +55,13 @@
             </select>
             </div>
             <div class="campo">
-            <input class="boton-negro" type="submit" name="submit" value="Salvar" onclick="validar();">
+            <input class="boton-negro" type="submit" name="submit" value="Salvar">
+            <!--  -->
             </div>
         </fieldset>
         </form>
     </main>
-    <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="empleados_alta.php" class="navegacion__enlace">Alta</a>
-                <a href="empleados_lista.php" class="navegacion__enlace">Empleados</a>
-            </nav>
-        </div>     
-        <p class="copyright">Todos los derechos reservados <?php echo date('Y')?> &copy;</p>
-    </footer>
-    <script src="/build/js/bundle.min.js"></script>
-</body>
-</html>
+    <div id="mensajes-error" class="alerta"></div>
+<?php 
+require "templates/footer.php"
+?>

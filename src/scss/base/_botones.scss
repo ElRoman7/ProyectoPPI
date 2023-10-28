@@ -21,3 +21,7 @@
     @include boton($negro,inline-block);
     color: $blanco;
 }
+
+.boton-gris-block{
+    @include boton($grisOscuro,block);
+}

@@ -14,6 +14,7 @@
     }    
 }
 
+
 .formulario fieldset{
     border-radius: 13px;
 }
@@ -47,3 +48,40 @@
     font-size: 1.6rem;
     margin-left: 11rem;
 }
+
+// #mensajes-error {
+//     background-color: $rojo; /* Establece el color de fondo rojo o el que desees */
+//     color: white; /* Configura el color del texto */
+//     padding: 10px; /* Añade un relleno para que el mensaje sea visible */
+//     display: none; /* Inicialmente oculta el elemento */
+// }
+
+.alerta{
+    background-color: $rojo;
+    padding: .5rem;
+    text-align: center;
+    color: $blanco;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+
+
+    &.error{
+        background-color: $negro;
+    }
+
+    &.exito{
+        background-color: $verde;
+    }
+}
+#mensajes-error {
+    background-color: $blanco; // Establece el color de fondo rojo o el que desees
+    display: none; // Inicialmente oculta el elemento
+  }
+  
+#mensajes-error.error {
+    background-color: $rojo;
+    display: block; // Muestra el elemento cuando tiene la clase 'error'
+}
+  
+
