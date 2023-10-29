@@ -15,6 +15,14 @@
       @include tablet{
         display: flex;
         column-gap: 2rem;
+        a{
+          color: $blanco;
+          &:hover {
+            cursor: pointer;
+            color: hsl(0, 0%, 70%); /* Gris al 40% de luminosidad (más claro) */
+        }
+        
+      }
       }
       .navegacion__enlace {
         display: block;
@@ -34,10 +42,7 @@
     }
   }
 
-  .navegacion__enlace a:hover {
-    color: $gris;
-    cursor: pointer;
-  }
+
 }
 
 .titulo-pag{

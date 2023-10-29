@@ -21,6 +21,7 @@
 
     h3{
         margin-top: 0;
+        font-weight: 500;
     }
     background-color: $gris;
 }
@@ -41,25 +42,24 @@
 .div3 
 { 
     background-color: $gris;
-    grid-area: 3 / 1 / 4 / 2; 
-    text-align: right;
+    grid-area: 3 / 1 / 4 / 3; 
+    text-align: center;
     p{
         margin: 0;
-        margin-right: 0.5rem;
     }
 
     height:4rem;
 }
-.div4{ 
-    grid-area: 3 / 2 / 4 / 3; 
-    background-color: $gris;
-    text-align: left;
-    p{
-        margin: 0;
-        margin-left: 0.5rem;
-    }
-    height:4rem;
-}
+// .div4{ 
+//     grid-area: 3 / 2 / 4 / 3; 
+//     background-color: $gris;
+//     text-align: left;
+//     p{
+//         margin: 0;
+//         margin-left: 0.5rem;
+//     }
+//     height:4rem;
+// }
 .div5 
 { 
     grid-area: 4 / 1 / 5 / 3; 

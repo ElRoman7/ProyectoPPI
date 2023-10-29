@@ -42,7 +42,9 @@ require "templates/header.php";
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="correo">Correo:</label>
-                    <input onblur="entra();" onfocus="sale();" class="campo__field" type="email" name="correo" id="correo" value="<?php echo $empleado['correo'];?>">
+                    <input class="campo__field" type="email" name="correo" id="correo" value="<?php echo $empleado['correo'];?>">
+                    <!-- onblur="entra();" onfocus="sale();" -->
+                    <div class="alerta alerta-correo bg-verde" id="mensaje"></div>
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="pass">Contraseña:</label>
@@ -51,7 +53,8 @@ require "templates/header.php";
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="archivo">Archivo:</label>
-                    <input class="campo__field" type="file" id="archivo" name="archivo" value = "<?php echo $empleado['archivo_n']; ?>">
+                    <input class="campo__field" type="file" id="archivo" name="archivo">
+                    <input type="hidden" name="archivoE_actual" value="<?php echo $empleado['archivo'];?>">
                     <!--<input class="campo__field" type="submit" value="Subir Archivo" name="submit">-->
                 </div>
                 <p class="archivo-actual"> Archivo Actual:<?php echo $empleado['archivo_n'];?></p>

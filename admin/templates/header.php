@@ -16,7 +16,7 @@
             </a>
             <nav class="navegacion">
                 <!-- <a href="empleados_elimina.php" class="navegacion__enlace">Elimina</a> -->
-                <a href="empleados_alta.php" class="navegacion__enlace">Alta</a>
+                <a href="productos_alta.php" class="navegacion__enlace">Productos</a>
                 <a href="empleados_lista.php" class="navegacion__enlace">Empleados</a>
             </nav>
         </div>

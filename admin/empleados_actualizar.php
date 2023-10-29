@@ -7,6 +7,9 @@ $db = conecta();
     $apellidos = $_POST['apellidos'];
     $correo = $_POST['correo'];
     $rol = $_POST['rol'];
+    $file_name = $_POST['archivo_n'];
+    $new_file_enc = $_POST['archivo'];
+
 
     $consulta = "SELECT * FROM empleados WHERE id = {$id}";
     $resultado = mysqli_query($db,$consulta);
@@ -27,10 +30,12 @@ $db = conecta();
         $new_file_enc = md5(uniqid(rand(), true )).".$ext";
         $file_destination = "$carpetaImagenes" . $new_file_enc;
         move_uploaded_file($file_tmp, $file_destination);
+        $query = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', pass = '$passEnc', rol = $rol, archivo_n = '$file_name', archivo = '$new_file_enc' WHERE id = $id";
     } else {
-        // Si no se proporciona un nuevo archivo, mantener el nombre de archivo actual y su hash
-        $new_file_enc = $_POST['archivo_n'];
-        $file_enc = $_POST['archivo'];
+        // // Si no se proporciona un nuevo archivo, mantener el nombre de archivo actual y su hash
+        // $new_file_enc = $_POST['archivo'];
+        // $file_name = $_POST['archivo_n'];
+        $query = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', pass = '$passEnc', rol = $rol WHERE id = $id";
     }
     // Verificar si se proporcionó una nueva contraseña
     if (!empty($_POST['pass'])) {
@@ -39,10 +44,7 @@ $db = conecta();
     } else {
         // Si no se proporciona una nueva contraseña, mantener la contraseña actual
         $passEnc = $empleado['pass'];
-        // $query = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', rol = $rol, archivo_n = '$file_name', archivo = '$new_file_enc' WHERE id = $id";
     }
-
-    $query = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', pass = '$passEnc', rol = $rol, archivo_n = '$file_name', archivo = '$new_file_enc' WHERE id = $id";
 
     $result = $db->query($query);
 

@@ -26,22 +26,22 @@
 
     <section class="contenedor ver-empleado">
         <div class="div1" class="head">
-            <h3 ><?php echo "Empleado";?></h3>
+            <h3><?php echo $empleado['rol'] == 1 ? "Gerente":"Ejecutivo"; ?></h3>
         </div>
         <div  class="div2">
             <img class="imagen-empleado" src="archivos/<?php echo $empleado['archivo'] ?>" alt="imagen Empleado">
         </div>
         <div  class="div3">
-            <p ><?php echo $empleado['nombre']; ?></p>
+            <p ><?php echo $empleado['nombre'] . " " .$empleado['apellidos']; ?></p>
         </div>
-        <div  class="div4">
+        <!-- <div  class="div4">
             <p ><?php echo $empleado['apellidos']; ?></p>
-        </div>
+        </div> -->
         <div  class="div5">
             <p><?php echo $empleado['correo'];?></p>
         </div>
         <div  class="div6">
-            <p><?php echo $empleado['rol'] == 1 ? "Gerente":"Ejecutivo"; ?></p>
+            <p><?php echo $empleado['status'] == 1 ? "Activo":"Inactivo"; ?></p>
         </div>
     </section>
 

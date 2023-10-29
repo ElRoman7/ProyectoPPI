@@ -35,7 +35,9 @@
             </div>
             <div class="campo">
                 <label class="campo__label" for="correo">Correo:</label>
-                <input onblur="entra();" onfocus="sale();" class="campo__field" type="email" name="correo" id="correo" placeholder="Escribe tu Email"value="<?php echo $email; ?>">
+                <input class="campo__field" type="email" name="correo" id="correo" placeholder="Escribe tu Email"value="<?php echo $email; ?>">
+                <!-- onblur="onB();" onfocus="onF();" -->
+                <div class="alerta alerta-correo" id="mensaje"></div>
             </div>
             <div class="campo">
                 <label class="campo__label" for="pass">Contraseña:</label>
@@ -62,6 +64,10 @@
         </form>
     </main>
     <div id="mensajes-error" class="alerta"></div>
+
+    <script>
+
+    </script>
 <?php 
 require "templates/footer.php"
 ?>

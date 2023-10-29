@@ -84,4 +84,13 @@
     display: block; // Muestra el elemento cuando tiene la clase 'error'
 }
   
+.alerta-correo{
+    border-radius: 1rem;
+}
+.bg-verde{
+    background-color: $verde;
+}
 
+.bg-rojo{
+    background-color: $rojo;
+}
