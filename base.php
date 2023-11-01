@@ -4,7 +4,7 @@
 ?>
 
     <div class="titulo-pag">
-        <h2 class="no-margin">Editando Empleado</h2>
+        <h2 class="no-margin">----</h2>
     </div>
     <div class="contenedor">
         <a class="boton-verde botonNuevo" href="empleados_lista.php">Volver</a>

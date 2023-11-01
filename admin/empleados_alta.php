@@ -1,5 +1,5 @@
 
-<body>
+
     <?php 
         require "templates/header.php"
     ?>

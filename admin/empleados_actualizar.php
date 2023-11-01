@@ -14,6 +14,13 @@ $db = conecta();
     $consulta = "SELECT * FROM empleados WHERE id = {$id}";
     $resultado = mysqli_query($db,$consulta);
     $empleado = mysqli_fetch_assoc($resultado);
+    if (!empty($_POST['pass'])) {
+        $pass = $_POST['pass'];
+        $passEnc = password_hash($pass,PASSWORD_DEFAULT);
+    } else {
+        // Si no se proporciona una nueva contraseña, mantener la contraseña actual
+        $passEnc = $empleado['pass'];
+    }
 
     // Verificar si se proporcionó un nuevo archivo
     if (!empty($_FILES['archivo']['name'])) {
@@ -38,13 +45,7 @@ $db = conecta();
         $query = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', pass = '$passEnc', rol = $rol WHERE id = $id";
     }
     // Verificar si se proporcionó una nueva contraseña
-    if (!empty($_POST['pass'])) {
-        $pass = $_POST['pass'];
-        $passEnc = password_hash($pass,PASSWORD_DEFAULT);
-    } else {
-        // Si no se proporciona una nueva contraseña, mantener la contraseña actual
-        $passEnc = $empleado['pass'];
-    }
+
 
     $result = $db->query($query);
 

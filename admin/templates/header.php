@@ -11,12 +11,12 @@
 <header class="header">
     <div class="contenedor">
         <div class="barra">
-            <a class="logo" href="empleados_lista.php">
+            <a class="logo" href="/">
                 <h1 class="logo__nombre no-margin centrar-texto">Empresa<span class="logo__bold">01</span></h1>
             </a>
             <nav class="navegacion">
                 <!-- <a href="empleados_elimina.php" class="navegacion__enlace">Elimina</a> -->
-                <a href="productos_alta.php" class="navegacion__enlace">Productos</a>
+                <a href="productos_lista.php" class="navegacion__enlace">Productos</a>
                 <a href="empleados_lista.php" class="navegacion__enlace">Empleados</a>
             </nav>
         </div>

@@ -1,26 +1,20 @@
+// Alta
 $(document).ready(function () {
     var mensajesError = '';
-    var correoValidoExp = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    // var correoValidoExp = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
     // Función para validar el correo
-    function validarCorreo() {
-        var correo = $('#correo').val();
+    function validarCodigo() {
+        var codigo = $('#codigo').val();
         $.ajax({
             type: "POST",
-            url: "funciones/verifica_correo.php",
-            data: { correo: correo },
+            url: "funciones/verifica_codigo.php",
+            data: { codigo: codigo },
             success: function(response) {
-                if (!correo.match(correoValidoExp)) {
-                    mensajesError += 'Por favor, ingrese un correo electrónico válido';
-                    // $('#mensajes-error').html('Por favor, ingrese un correo electrónico válido.<br>');
+                if (response === "exist") {
+                    mensajesError += 'El codigo ingresado ya existe o es inválido.<br>';
+                    $('#mensajes-error').html('El codigo ingresado ya existe o es inválido.<br>');
                     $("#mensaje").removeClass("bg-verde").addClass("bg-rojo");
-                    $("#mensaje").html("El correo ingresado es Inválido.");
-                    // return false; // La sintaxis del correo no es válida
-                }
-                else if (response === "exist") {
-                    mensajesError += 'El correo ingresado ya existe o es inválido.<br>';
-                    $('#mensajes-error').html('El correo ingresado ya existe o es inválido.<br>');
-                    $("#mensaje").removeClass("bg-verde").addClass("bg-rojo");
-                    $("#mensaje").html("Ya ha sido registrado este correo");
+                    $("#mensaje").html("Ya ha sido registrado este codigo");
                     setTimeout("$('#mensaje').html('');",3000);
                 } else if (response === "not_exist") {
                     mensajesError = '';
@@ -33,36 +27,36 @@ $(document).ready(function () {
         });
     }
 
-    // Validar el correo en tiempo real (evento blur)
-    $("#correo").on("blur", function() {
-        validarCorreo();
+    // Validar el codigo en tiempo real (evento blur)
+    $("#codigo").on("blur", function() {
+        validarCodigo();
     });
 
     // Validar el correo al hacer clic en el botón de enviar (evento click)
     $('#miFormulario').submit(function (e) {
         // Validar los campos y mostrar mensajes de error si es necesario
         var nombre = $('#nombre').val();
-        var apellidos = $('#apellidos').val();
-        var correo = $('#correo').val();
-        var pass = $('#pass').val();
-        var rol = $('#rol').val();
+        var codigo = $('#codigo').val();
+        var descripcion = $('#descripcion').val();
+        var costo = $('#costo').val();
+        var stock = $('#stock').val();
         var archivo = $('#archivo').val();
 
 
         if (nombre === '') {
             mensajesError += 'Por favor, complete el campo Nombre.<br>';
         }
-        if (apellidos === '') {
-            mensajesError += 'Por favor, complete el campo Apellidos.<br>';
+        if (codigo === '') {
+            mensajesError += 'Por favor, complete el campo Codigo.<br>';
         }
-        if (correo === '') {
-            mensajesError += 'Por favor, complete el campo Correo.<br>';
+        if (descripcion === '') {
+            mensajesError += 'Por favor, complete el campo Descripcion.<br>';
         }
-        if (pass === '') {
-            mensajesError += 'Por favor, complete el campo Contraseña.<br>';
+        if (costo === '') {
+            mensajesError += 'Por favor, complete el campo Costo.<br>';
         }
-        if (rol === '0') {
-            mensajesError += 'Por favor, seleccione un Rol.<br>';
+        if (stock === '') {
+            mensajesError += 'Por favor, complete el campo Stock.<br>';
         }
         if (archivo === '') {
             mensajesError += 'Por favor, seleccione un archivo.<br>';
@@ -72,17 +66,25 @@ $(document).ready(function () {
         $('#mensajes-error').html(mensajesError);
 
         // Validar el correo utilizando AJAX
-        validarCorreo();
+        validarCodigo();
 
         // Si hay errores, no envíes el formulario
         if (mensajesError === '') {
             $('#mensajes-error').removeClass('error');
         } else {
             $('#mensajes-error').addClass('error');
+
+            setTimeout(function() {
+                $('#mensajes-error').removeClass('error');
+            }, 5000); // 5000 milisegundos (5 segundos)
             e.preventDefault();
         }
     });
 });
+
+
+
+//! Editar
 $(document).ready(function () {
     var mensajesError = '';
     var correoValidoExp = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
