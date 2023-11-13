@@ -1,5 +1,10 @@
 <?php
 require "funciones/conecta.php";
+require 'funciones/funciones.php';
+$auth = estaAutenticado();
+if(!$auth){
+    header('Location: /');
+}
 $con = conecta();
 
 if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["id"])) {
@@ -67,10 +72,10 @@ require "templates/header.php";
                 </select>
                 </div>
                 <!-- Otros campos del formulario con valores prellenados desde la base de datos -->
-                <div class="campo">
+            </fieldset>
+            <div class="campo">
                     <input class="boton-negro" type="submit" name="submit" value="Guardar Cambios">
                 </div>
-            </fieldset>
         </form>
     </main>
     <div id="mensajes-error" class="alerta"></div>

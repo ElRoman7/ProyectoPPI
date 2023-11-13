@@ -1,6 +1,9 @@
-
-
-    <?php 
+<?php 
+    require 'funciones/funciones.php';
+    $auth = estaAutenticado();
+    if(!$auth){
+        header('Location: /');
+    }
         require "templates/header.php"
     ?>
     <div class="titulo-pag">
@@ -56,11 +59,11 @@
                     <option value="2">Ejecutivo</option>
             </select>
             </div>
-            <div class="campo">
+        </fieldset>
+        <div class="campo">
             <input class="boton-negro" type="submit" name="submit" value="Salvar">
             <!--  -->
             </div>
-        </fieldset>
         </form>
     </main>
     <div id="mensajes-error" class="alerta"></div>

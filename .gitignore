@@ -1,4 +1,6 @@
 /node_modules
 /admin/funciones/conecta.php
+/admin/archivos
+/admin/archivosProductos
 /build
 bloc.txt

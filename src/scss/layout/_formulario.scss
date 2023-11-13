@@ -17,6 +17,7 @@
 
 .formulario fieldset{
     border-radius: 13px;
+    border-color: #9b9b9b;
 }
 
 .campo{
@@ -57,6 +58,7 @@
 // }
 
 .alerta{
+    display: none;
     background-color: $rojo;
     padding: .5rem;
     text-align: center;
@@ -89,6 +91,10 @@
 }
 .bg-verde{
     background-color: $verde;
+}
+
+#login-error{
+    background-color: $rojo;
 }
 
 .bg-rojo{

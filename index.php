@@ -1,14 +1,18 @@
 <?php 
-
+    $auth = $_SESSION['login'] ?? false;
     require "admin/templates/header.php";
 ?>
 
     <div class="titulo-pag">
-        <h2 class="no-margin">---</h2>
+        <h2 class="">Index</h2>
     </div>
-    <div class="contenedor">
-        <a class="boton-verde botonNuevo" href="admin/empleados_lista.php">Empleados Lista</a>
-        <a class="boton-verde botonNuevo" href="admin/productos_lista.php">Productos Lista</a>
+    <div class="contenedor"> 
+        <?php if($auth): 
+            header('Location: /admin/bienvenido.php');
+        ?>
+        <?php else: ?>
+        <a class="boton boton-verde botonNuevo" href="admin/index.php">Log-in</a>
+        <?php endif; ?>
     </div>
 
 <?php 

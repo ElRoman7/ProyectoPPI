@@ -1,4 +1,9 @@
 <?php
+    require 'funciones/funciones.php';
+    $auth = estaAutenticado();
+    if(!$auth){
+        header('Location: /');
+    }
 require "funciones/conecta.php";
 $db = conecta();
 

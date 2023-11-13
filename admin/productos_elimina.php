@@ -1,5 +1,11 @@
 <?php
 require "funciones/conecta.php";
+require 'funciones/funciones.php';
+$auth = estaAutenticado();
+if(!$auth){
+    header('Location: /');
+}
+
 $con = conecta();
 
 if (isset($_POST['id'])) {

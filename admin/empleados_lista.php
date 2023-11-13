@@ -1,6 +1,11 @@
 <?php 
      //empleados_lista.php
      require "funciones/conecta.php";
+     require 'funciones/funciones.php';
+     $auth = estaAutenticado();
+     if(!$auth){
+         header('Location: /');
+     }
      $con = conecta();
     //  $id = $_POST['id'];
 

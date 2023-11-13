@@ -1,5 +1,10 @@
     <?php 
-        require "templates/header.php"
+        require "templates/header.php";
+        require 'funciones/funciones.php';
+        $auth = estaAutenticado();
+        if(!$auth){
+            header('Location: /');
+        }
     ?>
     <div class="titulo-pag">
         <h2 class="no-margin">Alta de Productos</h2>
@@ -56,9 +61,6 @@
                 <label class="campo__label" for="archivo">Archivo:</label>
                 <input class="campo__field" type="file" id="archivo" name="archivo"> <br><br>
                 <!--<input class="campo__field" type="submit" value="Subir Archivo" name="submit">-->
-            </div>
-            <div class="campo">
-            <input class="boton-negro" type="submit" name="submit" value="Salvar">
             </div>
         </fieldset>
         </form>
