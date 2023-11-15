@@ -25,7 +25,7 @@
     </div>
     
     <main class="contenedor">
-        <form enctype="multipart/form-data" class="formulario" name="Forma01" method="POST" action="productos_salva.php"  id="miFormulario">
+        <form enctype="multipart/form-data" class="formulario" name="Forma01" method="POST" action="productos_salva.php"  id="miFormularioP">
             <fieldset>
                 <legend>Información Personal</legend>
                 <!-- Nombre del producto -->
@@ -60,9 +60,13 @@
             <div class="campo">
                 <label class="campo__label" for="archivo">Archivo:</label>
                 <input class="campo__field" type="file" id="archivo" name="archivo"> <br><br>
-                <!--<input class="campo__field" type="submit" value="Subir Archivo" name="submit">-->
+                <input class="campo__field" type="submit" value="Subir Archivo" name="submit">
             </div>
         </fieldset>
+                <div class="campo">
+            <input class="boton-negro" type="submit" name="submit" value="Salvar">
+            <!--  -->
+            </div>
         </form>
     </main>
     <div id="mensajes-error" class="alerta"></div>

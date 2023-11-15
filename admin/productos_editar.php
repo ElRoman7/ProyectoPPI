@@ -39,7 +39,7 @@ require "templates/header.php";
                 <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
                 <div class="campo">
                     <label class="campo__label" for="nombreP">Nombre:</label>
-                    <input class="campo__field" type="text" name="nombreP" id="nombreP" value="<?php echo $producto['nombre']; ?>">
+                    <input class="campo__field" type="text" name="nombreP" id="nombreP" placeholder="Escribe el Nombre del Producto" value="<?php echo $producto['nombre']; ?>">
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="codigo">Código:</label>

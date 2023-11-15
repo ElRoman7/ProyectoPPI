@@ -33,8 +33,8 @@
                 <a class="navegacion__enlace" href="/admin/bienvenido.php">Home</a>
                 <a href="/admin/empleados_lista.php" class="navegacion__enlace">Empleados</a>
                 <a href="/admin/productos_lista.php" class="navegacion__enlace">Productos</a>
-                <a href="#" class="navegacion__enlace">Promociones</a>
-                <a href="#" class="navegacion__enlace">Pedidos</a>
+                <a href="promociones_lista.php" class="navegacion__enlace">Promociones</a>
+                <a href="pedidos_lista.php" class="navegacion__enlace">Pedidos</a>
                 <a href="/cerrar_sesion.php" class="navegacion__enlace">Cerrar Sesión</a>
                 
                 <?php endif; ?>

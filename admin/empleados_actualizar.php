@@ -42,15 +42,12 @@ $db = conecta();
         $new_file_enc = md5(uniqid(rand(), true )).".$ext";
         $file_destination = "$carpetaImagenes" . $new_file_enc;
         move_uploaded_file($file_tmp, $file_destination);
-        $query = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', pass = '$passEnc', rol = $rol, archivo_n = '$file_name', archivo = '$new_file_enc' WHERE id = $id";
     } else {
         // // Si no se proporciona un nuevo archivo, mantener el nombre de archivo actual y su hash
-        // $new_file_enc = $_POST['archivo'];
-        // $file_name = $_POST['archivo_n'];
-        $query = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', pass = '$passEnc', rol = $rol WHERE id = $id";
+        $new_file_enc = $_POST['archivo'];
+        $file_name = $_POST['archivo_n'];
     }
-    // Verificar si se proporcionó una nueva contraseña
-
+    $query = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', correo = '$correo', pass = '$passEnc', rol = $rol, archivo_n = '$file_name', archivo = '$new_file_enc' WHERE id = $id";
 
     $result = $db->query($query);
 

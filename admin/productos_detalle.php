@@ -34,7 +34,7 @@
             <h3><?php echo $producto['nombre']; ?></h3>
         </div>
         <div  class="div2">
-            <img class="imagen-empleado" src="archivos/<?php echo $producto['archivo'] ?>" alt="imagen Producto">
+            <img class="imagen-empleado" src="archivosProductos/<?php echo $producto['archivo'] ?>" alt="imagen Producto">
         </div>
         <div  class="div3">
             <p ><?php echo "$".$producto['costo']; ?></p>

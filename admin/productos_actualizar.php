@@ -1,12 +1,12 @@
 <?php
 require "funciones/conecta.php";
 require 'funciones/funciones.php';
-$auth = estaAutenticado();
-if(!$auth){
-    header('Location: /');
-}
+    $auth = estaAutenticado();
+    if(!$auth){
+        header('Location: /');
+    }
 
-$db = conecta();
+    $db = conecta();
 
     $id = $_POST['id'];
     $nombre = $_POST['nombreP'];

@@ -1,5 +1,6 @@
 // Alta
 $(document).ready(function () {
+    $("#mensaje").css("display", "block");
     var mensajesError = '';
     // var correoValidoExp = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
     // Función para validar el correo
