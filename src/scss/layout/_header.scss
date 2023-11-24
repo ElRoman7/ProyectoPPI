@@ -1,6 +1,14 @@
 /* Header */
 .header {
-  height: 12rem;
+  height: 25rem;
+  .logo{
+    display: grid;
+    place-items: center;
+  }
+  @include tablet{
+    display: flex;
+    height: 10rem;
+  }
   background-color: $grisOscuro;
   margin-top: 0;
   // margin-bottom: 1rem;
@@ -15,6 +23,7 @@
       @include tablet{
         display: flex;
         column-gap: 2rem;
+        margin-top: 1rem;
         a{
           color: $blanco;
           &:hover {
@@ -42,13 +51,26 @@
     }
   }
 
+  img{
+    filter: grayscale(100%);  }
+
 
 }
 
 .titulo-pag{
   h2{
     font-weight: 500;
+    margin-bottom: 0;
   }
-  margin-bottom: -5rem;
+  margin-top: 2rem;
+
+
+  // margin-bottom: -5rem;
 
 }
+.logo__nombre{
+  margin-top: 1.5rem;
+  width: 30rem;
+
+}
+

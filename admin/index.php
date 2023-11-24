@@ -1,12 +1,46 @@
 <?php 
-    require 'funciones/funciones.php';
+    require 'includes/funciones/funciones.php';
     $auth = estaAutenticado();
     if($auth){
         header('Location: bienvenido.php');
     }
-    require "templates/header.php";
+?>
+<?php 
+    if(!isset($_SESSION)){
+        session_start();
+    }
+
+    $auth = $_SESSION['login'] ?? false;
+    $admin = $_SESSION['admin'] ?? false;
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa01</title>
+    <link rel="stylesheet" href="../../../build/css/app.css">
+</head>
+<body>
+<header class="header">
+    <div class="contenedor">
+        <div class="barra">
+        <?php if($auth&&$admin): ?>
+            <a class="logo" href="/admin/bienvenido.php">
+            <!-- <a href="/admin/bienvenido.php">Home</a> -->
+        <?php else: ?>
+            <a class="logo" href="/">
+        <?php endif; ?>
+            <!-- <h1 class="logo__nombre no-margin centrar-texto">Empresa<span class="logo__bold">01</span></h1> -->
+            <img class="logo__nombre centrar-texto"  src="/Logo.png" alt="">
+            </a>
+            <nav class="navegacion">
+            </nav>
+        </div>
+    </div>
+</header>
     <div class="titulo-pag">
         <h2 class="no-margin">Login</h2>
     </div>
@@ -29,16 +63,13 @@
             <div class="campo">
                     <input class="boton-negro" type="submit" name="submit" value="Ingresar">
             </div>
-            <?php foreach($errores as $error): ?>
                 <div class="alerta error">
-                    <?php echo $error; ?>
                 </div>
-            <?php endforeach; ?>
+
             <div class="alerta" id="login-error"></div>
         </form>
     </section>
 
 <?php 
-
-    require "templates/footer.php"
+    require "includes/templates/footer.php"
 ?>

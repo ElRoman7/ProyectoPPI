@@ -1,21 +1,11 @@
 <?php
-require "funciones/conecta.php";
-require 'funciones/funciones.php';
-// $auth = estaAutenticado();
-// if(!$auth){
-//     header('Location: /');
-// }
+require "includes/config/conecta.php";
+require 'includes/funciones/funciones.php';
+
 $db = conecta();
 
     $correo = $_POST['correoL'];
     $password = $_POST['passwordL'];
-
-    // if(!$correo){
-    //     // $errores[]= "El Email es obligatorio o no es válido";
-    // }
-    // if(!$password){
-    //     // $errores[] = "El Password es obligatorio"; 
-    // }
 
         $query = "SELECT * FROM empleados WHERE status = 1 AND eliminado = 0 AND correo = '$correo'";
         $resultado = mysqli_query($db,$query);    
@@ -37,9 +27,9 @@ $db = conecta();
                 $_SESSION['usuario'] = $usuario['correo'];
                 $_SESSION['login'] = true;
                 $_SESSION['nombreUsuario'] = $usuario['nombre'];
+                $_SESSION['admin']=true;
 
-                // header('Location: /admin/bienvenido.php');
-                echo "success";
+                header('Location: bienvenido.php');
 
             }else{
                 // header('Location: /admin/');

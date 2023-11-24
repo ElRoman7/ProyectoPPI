@@ -5,20 +5,20 @@ $(document).ready(function () {
     // var correoValidoExp = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
     // Función para validar el correo
     function validarCodigo() {
-        var codigo = $('#codigo').val();
+        var codigo = $('#prod_codigo').val();
         $.ajax({
             type: "POST",
-            url: "funciones/verifica_codigo.php",
+            url: "../includes/funciones/verifica_codigo.php",
             data: { codigo: codigo },
             success: function(response) {
                 if (response === "exist") {
                     mensajesError += 'El codigo ingresado ya existe o es inválido.<br>';
-                    $('#mensajes-error').html('El codigo ingresado ya existe o es inválido.<br>');
+                    // $('#mensajes-error').html('El codigo ingresado ya existe o es inválido.<br>');
                     $("#mensaje").removeClass("bg-verde").addClass("bg-rojo");
                     $("#mensaje").html("Ya ha sido registrado este codigo");
                     setTimeout("$('#mensaje').html('');",3000);
                 } else if (response === "not_exist") {
-                    mensajesError = '';
+                    // mensajesError = '';
                     $("#mensaje").removeClass("bg-rojo").addClass("bg-verde");
                     $("#mensaje").html("");
                 } else {
@@ -29,19 +29,19 @@ $(document).ready(function () {
     }
 
     // Validar el codigo en tiempo real (evento blur)
-    $("#codigo").on("blur", function() {
+    $("#prod_codigo").on("blur", function() {
         validarCodigo();
     });
 
     // Validar el correo al hacer clic en el botón de enviar (evento click)
-    $('#miFormularioP').submit(function (e) {
+    $('#ProductosAlta').submit(function (e) {
         // Validar los campos y mostrar mensajes de error si es necesario
-        var nombre = $('#nombre').val();
-        var codigo = $('#codigo').val();
-        var descripcion = $('#descripcion').val();
-        var costo = $('#costo').val();
-        var stock = $('#stock').val();
-        var archivo = $('#archivo').val();
+        var nombre = $('#prod_nombre').val();
+        var codigo = $('#prod_codigo').val();
+        var descripcion = $('#prod_descripcion').val();
+        var costo = $('#prod_costo').val();
+        var stock = $('#prod_stock').val();
+        var archivo = $('#prod_archivo').val();
 
 
         if (nombre === '') {
@@ -73,8 +73,8 @@ $(document).ready(function () {
         if (mensajesError === '') {
             $('#mensajes-error').removeClass('error');
         } else {
+            mensajesError = '';
             $('#mensajes-error').addClass('error');
-
             setTimeout(function() {
                 $('#mensajes-error').removeClass('error');
             }, 5000); // 5000 milisegundos (5 segundos)
@@ -89,17 +89,17 @@ $(document).ready(function () {
 $(document).ready(function () {
     var mensajesError = '';
     // var correoValidoExp = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
-    const codigoOriginal = $('#codigo').val(); // Almacena el valor original del correo
+    const codigoOriginal = $('#prod_codigo').val(); // Almacena el valor original del correo
     console.log(codigoOriginal);
 
     // Función para validar el correo
     function validarCodigo() {
 
-        let nuevoCodigo = $('#codigo').val();
+        let nuevoCodigo = $('#prod_codigo').val();
 
         $.ajax({
             type: "POST",
-            url: "funciones/verifica_codigo.php",
+            url: "../includes/funciones/verifica_codigo.php",
             data: { codigo: nuevoCodigo },
             success: function(response) {
 
@@ -117,7 +117,7 @@ $(document).ready(function () {
                         $("#mensaje").removeClass("bg-verde").addClass("bg-rojo");
                         $("#mensaje").html("Ya ha sido registrado este codigo");
                 } else if (response === "not_exist") {
-                    mensajesError = '';
+                    
                     $("#mensaje").removeClass("bg-rojo").addClass("bg-verde");
                     $("#mensaje").html("");
                 } else {
@@ -129,18 +129,18 @@ $(document).ready(function () {
 }
 
     // Validar el correo en tiempo real (evento blur)
-    $("#codigo").on("blur", function() {
+    $("#prod_codigo").on("blur", function() {
             validarCodigo();
     });
 
     // Validar el correo al hacer clic en el botón de enviar (evento click)
-    $('#miFormularioActualizarP').submit(function (e) {
+    $('#ProductosActualizar').submit(function (e) {
         // Validar los campos y mostrar mensajes de error si es necesario
-        var nombre = $('#nombre').val();
-        var codigo = $('#codigo').val();
-        var descripcion = $('#descripcion').val();
-        var costo = $('#costo').val();
-        var stock = $('#stock').val();
+        var nombre = $('#prod_nombre').val();
+        var codigo = $('#prod_codigo').val();
+        var descripcion = $('#prod_descripcion').val();
+        var costo = $('#prod_costo').val();
+        var stock = $('#prod_stock').val();
 
         if (nombre === '') {
             mensajesError += 'Por favor, complete el campo Nombre.<br>';
@@ -168,6 +168,7 @@ $(document).ready(function () {
         if (mensajesError === '') {
             $('#mensajes-error').removeClass('error');
         } else {
+            mensajesError = '';
             $('#mensajes-error').addClass('error');
             e.preventDefault();
         }

@@ -1,11 +1,11 @@
 <?php 
-    require 'funciones/funciones.php';
+    require 'includes/funciones/funciones.php';
     $auth = estaAutenticado();
     if(!$auth){
-        header('Location: /admin/');
+        header('Location: index.php');
     }
     $nombre = $_SESSION['nombreUsuario'];
-    require "templates/header.php";
+    require "includes/templates/header.php";
 ?>
 
     <div class="titulo-pag">
@@ -13,10 +13,9 @@
         <h3>Bienvenido <?=$nombre;?></h3>
     </div>
     <div class="contenedor">
-        <a class="boton-verde botonNuevo" href="empleados_lista.php">Empleados Lista</a>
-        <a class="boton-verde botonNuevo" href="productos_lista.php">Productos Lista</a>
+        <a class="boton-verde botonNuevo" href="/">Vista Cliente</a>
     </div>
 
 <?php 
-    require "templates/footer.php"
+    require "includes/templates/footer.php"
 ?>

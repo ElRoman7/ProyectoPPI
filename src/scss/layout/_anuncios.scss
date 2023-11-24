@@ -1,0 +1,194 @@
+@include tablet{
+    .contenedor-anuncios{
+        @include grid(3,2rem)
+    }
+}
+
+.anuncio{
+    background-color: lighten( $gris, 5);//lighten sirve para aclarar un color
+    border: 1px solid darken($gris, 7);
+    margin-bottom: 2rem;
+    height: 55rem;
+    // position: absolute;
+
+    .contenido-anuncio{
+        padding: 1.5rem;
+        padding-top: 0;
+        .contenedor-texto{
+            height: 23.5rem;
+        }
+        .contenedor-precio{
+            // margin-top: 1rem;
+            height: 3.5rem;
+            p{
+                margin-bottom: 1rem;
+            }
+            // margin-bottom: 1rem;
+        }
+        .contenedor-boton{
+            @include grid (2,0.5rem);
+            // margin-top: 0.5rem;
+            height: 7rem;
+
+        }
+    }
+    h3,p{
+        margin: 0;
+    }
+    .anuncio-foto{
+        padding: 2rem;
+        width: 30rem;
+        height: 20rem;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        // align-content: center;
+        margin: 0 auto;
+        img {
+            max-width: 100%; /* Para asegurar que la imagen no sea más ancha que su contenedor */
+            max-height: 100%; /* Para asegurar que la imagen no sea más alta que su contenedor */
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+}
+.precio{
+    color: $verde;
+    font-weight: bold;
+    font-size: 2.6rem;
+}
+
+.contenedor-anuncio{
+    @include tablet{
+        @include grid(2,2rem);
+    }
+}
+@include tablet{
+    .tarjeta-anuncio{
+        border: 1px, solid, #000;
+        border-radius: 1rem;
+        @include grid(2,3rem);
+        .contador-carrito{
+            width: 30%;
+            border: 0.5px solid $gris;
+            border-radius: 0.5rem;
+        }
+    }
+            .tarjeta-boton{
+            justify-content: right;
+            @include grid(1,2rem);
+            height: 4rem;
+            .tarjeta-pre{
+                display: flex;
+                column-gap: 2rem;
+                .contador-carrito{
+                    width: 30%;
+                    border: 0.5px solid $gris;
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+
+        .tarjeta-titulo{
+            
+            height: 5rem;
+
+        }
+        .tarjeta-precio{
+            h4{
+                margin: 0;
+            }
+            height: 4rem;
+        }
+        .tarjeta-descripcion{
+            height: 33rem;
+    
+        }
+        .tarjeta-stock{
+            height: 3rem;
+        }
+}
+
+.tarjeta-anuncio{
+    height: 58.4rem;
+    // @include grid(2,3rem);
+    margin-top: 3rem;
+    // border: 1px, solid, #000;
+    // border-radius: 1rem;
+    .tarjeta-foto{
+        padding: 3rem;
+        img {
+            max-width: 100%; /* Para asegurar que la imagen no sea más ancha que su contenedor */
+            max-height: 53rem; /* Para asegurar que la imagen no sea más alta que su contenedor */
+            border-radius: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .tarjeta-información{
+        padding: 3rem;
+        .tarjeta-titulo{
+            
+            height: 5rem;
+            h2{
+                margin: 0;
+            }
+        }
+        .tarjeta-precio{
+
+            color: $verde;
+        }
+        .tarjeta-descripcion{
+            // margin-bottom: 5rem;
+        }
+        .tarjeta-stock{
+
+            p{
+                margin: 0;
+                font-size: 1.5rem;
+                text-align: right;
+            }
+        }
+        .tarjeta-boton{
+            justify-content: right;
+            @include grid(1,2rem);
+
+            .tarjeta-pre{
+                // display: flex;
+                // column-gap: 2rem;
+                // .contador-carrito{
+                //     width: 30%;
+                //     border: 0.5px solid $gris;
+                //     border-radius: 0.5rem;
+                // }
+                .contador-carrito{
+                    width: 100%;
+                    border: 0.5px solid $gris;
+                    border-radius: 0.5rem;
+                }
+            }
+            input{
+                margin: 0;
+            }
+        }
+    }
+    
+}
+
+.confirmacion{
+    // padding: 1rem;
+    color: $verde;
+    // background-color: $verde;
+}
+// .confirmacionPedido{
+//     display: none;
+//     width: 100%;
+//     padding: 2rem;
+// }
+
+.input-cantidad{
+    width: 100%;
+    border: 0.5px solid $gris;
+    border-radius: 0.5rem;
+}
