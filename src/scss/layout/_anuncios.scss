@@ -15,7 +15,7 @@
         padding: 1.5rem;
         padding-top: 0;
         .contenedor-texto{
-            height: 23.5rem;
+            height: 19.5rem;
         }
         .contenedor-precio{
             // margin-top: 1rem;
@@ -38,15 +38,15 @@
     .anuncio-foto{
         padding: 2rem;
         width: 30rem;
-        height: 20rem;
+        height: 24rem;
         display: flex;
-        // justify-content: center;
+        justify-content: center;
         align-items: center;
-        // align-content: center;
+        align-content: center;
         margin: 0 auto;
         img {
-            max-width: 100%; /* Para asegurar que la imagen no sea más ancha que su contenedor */
-            max-height: 100%; /* Para asegurar que la imagen no sea más alta que su contenedor */
+            max-width: 65%; /* Para asegurar que la imagen no sea más ancha que su contenedor */
+            // max-height: 120%; /* Para asegurar que la imagen no sea más alta que su contenedor */
             margin: 0;
             padding: 0;
         }
@@ -119,8 +119,8 @@
     .tarjeta-foto{
         padding: 3rem;
         img {
-            max-width: 100%; /* Para asegurar que la imagen no sea más ancha que su contenedor */
-            max-height: 53rem; /* Para asegurar que la imagen no sea más alta que su contenedor */
+            max-width: 60%; /* Para asegurar que la imagen no sea más ancha que su contenedor */
+            // max-height: 53rem; /* Para asegurar que la imagen no sea más alta que su contenedor */
             border-radius: 1rem;
             margin: 0;
             padding: 0;

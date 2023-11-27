@@ -1,8 +1,15 @@
 <?php 
     require 'includes/funciones/funciones.php';
-
+    $resultado = $_GET["result"] ?? null; //Busca el valor y si no lo encuentra lo da como null
     require "includes/templates/header.php";
 ?>
+    <?php if($resultado):  ?>
+        <div class="contenedor mensaje-resultado">
+            <?php if($resultado==1): ?>
+                <p class="mensaje-contenido">Para acceder al carrito necesitas Iniciar Sesión</p>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
 
     <div class="titulo-pag">
         <h2 class="no-margin">Login</h2>
@@ -11,7 +18,7 @@
         <a class="boton-verde botonNuevo" href="index.php">Volver</a>
     </div>
     <section class="contenedor class="formulario">
-        <form action="validaUsuario.php" method="post" class="formulario" id="formularioUsuario">
+        <form action="usuario_validar.php" method="post" class="formulario" id="formularioUsuario">
             <fieldset>
                 <legend>Login</legend>
                 <div class="campo">
@@ -32,7 +39,7 @@
             <div class="alerta" id="login-error"></div>
         </form>
 
-        <a class="boton boton-amarillo" href="registro.php">Registrarse</a>
+        <a class="boton boton-amarillo" href="usuario_registro.php">Registrarse</a>
     </section>
 
 <?php 

@@ -26,7 +26,7 @@
         <?php else: ?>
             <a class="logo" href="/">
         <?php endif; ?>
-            <img class="logo__nombre centrar-texto"  src="/Logo.png" alt="">
+            <img class="logo__nombre centrar-texto"  src="../../../build/img/Logo.png" alt="Logo">
             </a>
             <nav class="navegacion">
                 <a class="navegacion__enlace" href="/admin/bienvenido.php">Home</a>

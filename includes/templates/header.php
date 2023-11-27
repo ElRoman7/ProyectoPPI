@@ -20,7 +20,7 @@
     <div class="contenedor">
         <div class="barra">
             <a class="logo" href="/">
-            <img class="logo__nombre centrar-texto"  src="/Logo.png" alt="">
+            <img class="logo__nombre centrar-texto"  src="build/img/Logo.png" alt="CartEase">
             </a>
             <nav class="navegacion">
                 <a class="navegacion__enlace" href="/">Home</a>

@@ -34,7 +34,7 @@
             <a class="logo" href="/">
         <?php endif; ?>
             <!-- <h1 class="logo__nombre no-margin centrar-texto">Empresa<span class="logo__bold">01</span></h1> -->
-            <img class="logo__nombre centrar-texto"  src="/Logo.png" alt="">
+            <img class="logo__nombre centrar-texto"  src="../../../build/img/Logo.png" alt="">
             </a>
             <nav class="navegacion">
             </nav>
@@ -48,7 +48,7 @@
         <a class="boton-verde botonNuevo" href="/admin/">Volver</a>
     </div>
     <section class="contenedor class="formulario">
-        <form action="validaUsuario.php" method="post" class="formulario" id="formularioUser">
+        <form action="usuario_validar.php" method="post" class="formulario" id="formularioUser">
             <fieldset>
                 <legend>Login</legend>
                 <div class="campo">

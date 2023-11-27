@@ -4,7 +4,7 @@
     require "includes/funciones/funciones.php";
     $auth = UsuarioAutenticado();
     if(!$auth){
-        header('Location: login.php');
+        header('Location: login.php?result=1');
     }
     $id_usuario = $_SESSION['id_usuario'];
     $db = conecta();
@@ -29,9 +29,6 @@
 
     <div class="titulo-pag">
         <h2 class="no-margin">Carrito</h2>
-    </div>
-    <div class="contenedor">
-        <a class="boton-verde botonNuevo" href="#">Volver</a>
     </div>
 
     <section class="contenedor seccion">

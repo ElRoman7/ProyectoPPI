@@ -11,7 +11,7 @@
     </div>
 
     <main class="contenedor">
-        <form enctype="multipart/form-data" class="formulario" name="Contacto" id="Contacto" method="POST" action="procesar_contacto.php">
+        <form enctype="multipart/form-data" class="formulario" name="Contacto" id="Contacto" method="POST" action="contacto_procesar.php">
             <fieldset>
                 <legend>Información de Contacto</legend>
 

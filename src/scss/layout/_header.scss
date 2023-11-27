@@ -74,3 +74,18 @@
 
 }
 
+.mensaje-resultado{
+  margin-top: 0.5rem;
+  width: 100%;
+  background-color: $verde;
+  padding: 0.3rem;
+  .mensaje-contenido{
+    text-align: center;
+    color: $blanco;
+    font-size: 2rem;
+    font-weight: bold;
+    p{
+      margin: 0;
+    }
+  }
+}

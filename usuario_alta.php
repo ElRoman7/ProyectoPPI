@@ -22,8 +22,8 @@
             // Insertamos en la BD
             $res = mysqli_query($con,$sql);
             if ($res) {
-                // Redirigir a empleados_lista.php después de una actualización exitosa
-                echo "1";
+
+                header('Location: login.php');
                 die;
             } else {
                 echo "2";

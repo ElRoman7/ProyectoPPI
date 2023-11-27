@@ -3,7 +3,7 @@ function agregarProducto(idP) {
     var cant = $('#cantidad'+idP).val();
     if (cant > 0) {
         $.ajax({
-           url      : 'agregarProducto.php',
+           url      : 'producto_agregar.php',
            type     : 'post',
            dataType : 'text',
            data     : 'idP='+idP+'&cant='+cant,
@@ -115,7 +115,7 @@ function confirmarPedido(id_pedido) {
         data: { id_pedido: id_pedido },  // Usar ":" en lugar de "=" y proporcionar un nombre de propiedad
         success: function(response) {
             if (response == "1") {
-                window.location.href = 'pedido_confirmado.php';
+                window.location.href = 'index.php?result=2';
             } else {
                 alert("No se pudo realizar la confirmación de tu pedido");
             }
