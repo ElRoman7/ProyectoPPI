@@ -29,24 +29,28 @@
         <a class="boton-verde botonNuevo" href="productos_lista.php">Volver</a>
     </div>
 
-    <section class="contenedor ver-empleado">
-        <div class="div1" class="head">
+    <section class="contenedor seccion tarjeta-producto">
+        <div class="bg-gray">
             <h3><?php echo $producto['nombre']; ?></h3>
         </div>
-        <div  class="div2">
-            <img class="imagen-empleado" src="../archivosProductos/<?php echo $producto['archivo'] ?>" alt="imagen Producto">
+        <div class="img">
+            <img class="imagen-producto" src="../archivosProductos/<?php echo $producto['archivo'] ?>" alt="imagen Producto">
         </div>
-        <div  class="div3">
-            <p ><?php echo "$".$producto['costo']; ?></p>
+        <div >
+            <p class="precio"><?php echo "$".$producto['costo']; ?></p>
         </div>
-        <div  class="div5">
-            <p><?php echo $producto['codigo']."<br>".$producto['descripcion'];?></p>
+        <div class="bg-gray">
+            <p><?php echo "Código: " . $producto['codigo']; ?></p>
         </div>
-        <div  class="div6">
+        <div >
+            <p><?php echo $producto['descripcion'];?></p>
+        </div>
+        <div class="bg-gray">
             <p><?php echo "Stock: ". $producto['stock']; ?></p>
         </div>
     </section>
 
+   
 <?php 
     require "../includes/templates/footer.php"
 ?>

@@ -17,11 +17,13 @@ $(document).ready(function () {
                     setTimeout("$('#mensaje').html('');",3000);
                 }
                 else if (response === "exist") {
+                    mensajesError = '';
                     mensajesError += 'El correo ingresado ya existe o es inválido.<br>';
                     $("#mensaje").removeClass("bg-verde").addClass("bg-rojo");
                     $("#mensaje").html("Ya ha sido registrado este correo");
                     setTimeout("$('#mensaje').html('');",3000);
                 } else if (response === "not_exist") {
+                    mensajesError = '';
                     $("#mensaje").removeClass("bg-rojo").addClass("bg-verde");
                     $("#mensaje").html("");
                 } else {
@@ -33,6 +35,7 @@ $(document).ready(function () {
 
     // Validar el correo en tiempo real (evento blur)
     $("#correo").on("blur", function() {
+        mensajesError = '';
         validarCorreo();
     });
 
@@ -91,7 +94,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     var mensajesError = '';
-    var correoValidoExp = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    var correoValidoExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const correoOriginal = $('#correo').val(); // Almacena el valor original del correo
     console.log(correoOriginal);
 

@@ -1,7 +1,7 @@
 // Alta
 $(document).ready(function () {
     $("#mensaje").css("display", "block");
-    var mensajesError = '';
+    let mensajesError = '';
     // var correoValidoExp = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
     // Función para validar el correo
     function validarCodigo() {
@@ -12,12 +12,14 @@ $(document).ready(function () {
             data: { codigo: codigo },
             success: function(response) {
                 if (response === "exist") {
+                    mensajesError = '';
                     mensajesError += 'El codigo ingresado ya existe o es inválido.<br>';
                     // $('#mensajes-error').html('El codigo ingresado ya existe o es inválido.<br>');
                     $("#mensaje").removeClass("bg-verde").addClass("bg-rojo");
                     $("#mensaje").html("Ya ha sido registrado este codigo");
                     setTimeout("$('#mensaje').html('');",3000);
                 } else if (response === "not_exist") {
+                    mensajesError = '';
                     // mensajesError = '';
                     $("#mensaje").removeClass("bg-rojo").addClass("bg-verde");
                     $("#mensaje").html("");
@@ -30,6 +32,7 @@ $(document).ready(function () {
 
     // Validar el codigo en tiempo real (evento blur)
     $("#prod_codigo").on("blur", function() {
+        mensajesError = '';
         validarCodigo();
     });
 
@@ -106,18 +109,17 @@ $(document).ready(function () {
             if(nuevoCodigo === codigoOriginal){
                     console.log(codigoOriginal);
                     console.log(nuevoCodigo);
-                    // El codigo no ha cambiado, no es necesario realizar la validación
-                    mensajesError = "";
                     $('#mensaje').html("");
                     $("#mensaje").addClass("bg-verde");
                     $("#mensaje").removeClass("bg-rojo");
                     return;
                 } else if (response === "exist") {
+                        mensajesError = '';
                         mensajesError = 'El codigo ingresado ya existe o es inválido.<br>';
                         $("#mensaje").removeClass("bg-verde").addClass("bg-rojo");
                         $("#mensaje").html("Ya ha sido registrado este codigo");
                 } else if (response === "not_exist") {
-                    
+                    mensajesError = '';
                     $("#mensaje").removeClass("bg-rojo").addClass("bg-verde");
                     $("#mensaje").html("");
                 } else {
@@ -130,6 +132,7 @@ $(document).ready(function () {
 
     // Validar el correo en tiempo real (evento blur)
     $("#prod_codigo").on("blur", function() {
+            mensajesError = '';
             validarCodigo();
     });
 

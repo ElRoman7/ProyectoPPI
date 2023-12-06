@@ -4,7 +4,14 @@
     $db=conecta();
 
     // consultar
-    $query = "SELECT * FROM productos where status=1 and eliminado=0 LIMIT ${limite} ";
+    
+    $consultaAleatoria = isset($consultaAleatoria) ? $consultaAleatoria : false;
+
+    if($consultaAleatoria){
+        $query = "SELECT * FROM productos where status=1 and eliminado=0 ORDER BY RAND() LIMIT ${limite} ";
+    }else{
+        $query = "SELECT * FROM productos where status=1 and eliminado=0 LIMIT ${limite} ";
+    }
     $id = $_GET["id"];
 
     $auth = UsuarioAutenticado();
@@ -24,7 +31,7 @@
             <div class="contenido-anuncio">
                 <div class="contenedor-texto">
                     <h3><?php echo $producto['nombre']; ?></h3>
-                    <p><?php echo substr($producto['descripcion'], 0, 130)."..."?><a href="productos_detalle.php?id=<?php echo $producto['id']; ?>"">Ver más</a></p>
+                    <!-- <p><?php echo substr($producto['descripcion'], 0, 130)."..."?><a href="productos_detalle.php?id=<?php echo $producto['id']; ?>"">Ver más</a></p> -->
                 </div>
                 <div class="contenedor-precio">
                     <p class="precio">$<?php echo $producto['costo']; ?></p>

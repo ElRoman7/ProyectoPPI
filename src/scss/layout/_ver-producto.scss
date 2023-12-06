@@ -1,0 +1,64 @@
+.tarjeta-producto{
+    // padding: 1rem;
+    width: 50%;
+    border: 1px solid $gris;
+    border-radius: 0.5rem;
+    div{
+        padding: 1rem;
+        align-items: center;
+        text-align: center;
+        h3{
+            margin: 0.5rem;
+        }
+        .precio{
+            color: $verde;
+        }
+        p{
+            margin: 0.5rem;
+        }
+        img{
+            margin: auto;
+            width: 25rem;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            mix-blend-mode: color-burn;
+        }
+    }
+    .img{
+        border-top: 1rem;
+    }
+
+    .bg-gray{
+        background-color: $gris;
+    }
+}
+
+.ver-promocion{
+    width: 50%;
+    border: 1px solid $gris;
+    border-radius: 0.5rem;
+    div{
+        padding: 1rem;
+        align-items: center;
+        text-align: center;
+        h3{
+            margin: 0.5rem;
+        }
+        .precio{
+            color: $verde;
+        }
+        p{
+            margin: 0.5rem;
+        }
+        img{
+            margin: auto;
+            width: 90%;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            mix-blend-mode: color-burn;
+        }
+    }
+    .img{
+        border-top: 1rem;
+    }
+}

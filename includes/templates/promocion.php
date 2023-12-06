@@ -3,7 +3,7 @@ require 'includes/config/conecta.php';
 $con = conecta();
 
 // Consulta SQL para obtener una imagen aleatoria
-$query = "SELECT archivo FROM promociones ORDER BY RAND() LIMIT 1";
+$query = "SELECT archivo FROM promociones WHERE status = 1 AND eliminado = 0 ORDER BY RAND() LIMIT 1";
 $result = mysqli_query($con, $query);
 
 // Verificar si hay resultados antes de intentar acceder a ellos

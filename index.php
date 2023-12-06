@@ -27,6 +27,7 @@
         
         <?php 
             $limite = 3;
+            $consultaAleatoria = true;
             include 'includes/templates/anuncios.php';
         ?>
 

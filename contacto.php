@@ -10,7 +10,7 @@
         <a class="boton-verde botonNuevo" href="index.php">Volver</a>
     </div>
 
-    <main class="contenedor">
+    <main class="contenedor seccion">
         <form enctype="multipart/form-data" class="formulario" name="Contacto" id="Contacto" method="POST" action="contacto_procesar.php">
             <fieldset>
                 <legend>Información de Contacto</legend>

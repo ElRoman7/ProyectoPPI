@@ -7,16 +7,16 @@
     }
     $con = conecta();
     $id = $_GET["id"];
-    $query = "SELECT * FROM productos WHERE id = $id";
+    $query = "SELECT * FROM promociones WHERE id = $id";
     $result = $con->query($query);
     if ($result->num_rows > 0) {
-        $producto = $result->fetch_assoc();
+        $promocion = $result->fetch_assoc();
     } else {
         // Manejo de errores si el empleado con el ID dado no se encuentra en la base de datos
-        echo "Producto no encontrado.";
+        echo "Promocion no encontrada.";
         exit;
     }
-    $rol = $producto['id'];
+    $rol = $promocion['id'];
 
 
     require "../includes/templates/header.php";
@@ -28,28 +28,14 @@
     <div class="contenedor">
         <a class="boton-verde botonNuevo" href="promociones_lista.php">Volver</a>
     </div>
-
-    <section class="contenedor ver-empleado">
-        <div class="div1" class="head">
-            <h3><?php echo $producto['nombre']; ?></h3>
+    <section class="contenedor ver-promocion">
+        <div class="bg-gray">
+            <h3><?php echo $promocion['nombre']; ?></h3>
         </div>
-        <div  class="div2">
-            <img class="imagen-empleado" src="../archivosProductos/<?php echo $producto['archivo'] ?>" alt="imagen Producto">
-        </div>
-        <div  class="div3">
-            <p ><?php echo "$".$producto['costo']; ?></p>
-        </div>
-        <!-- <div  class="div4">
-            <p ><?php echo $producto['apellidos']; ?></p>
-        </div> -->
-        <div  class="div5">
-            <p><?php echo $producto['codigo']."<br>".$producto['descripcion'];?></p>
-        </div>
-        <div  class="div6">
-            <p><?php echo "Stock: ". $producto['stock']; ?></p>
+        <div>
+        <img class="imagen-empleado" src="../archivosPromociones/<?php echo $promocion['archivo'] ?>" alt="imagen Promocion">
         </div>
     </section>
-
 <?php 
     require "../includes/templates/footer.php";
 ?>

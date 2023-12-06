@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $_POST["cont_descripcion"];
 
     // Configura el destinatario y el asunto
-    $destinatario = "sergio.romam@outlook.com";
+    $destinatario = "sergio.roman5167@alumnos.udg.mx";
     $asunto = "Nuevo mensaje de contacto";
 
     // Cuerpo del mensaje
@@ -19,23 +19,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje .= "Correo: $correo\n";
     $mensaje .= "Descripción:\n$descripcion";
 
-    // Configurar PHPMailer
-    $mail = new PHPMailer(true); // Habilitar excepciones
-
     try {
-        // Configuración del servidor SMTP
-        $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
-        $mail->SMTPAuth = true;
-        $mail->Username = '2318dc4bc2d183';
-        $mail->Password = '8405b43ff7a86d';
-        $mail->SMTPSecure = 'tls'; // Puedes usar 'ssl' también si es necesario
-        $mail->Port = 2525; // Puerto SMTP
-        $phpmailer = new PHPMailer();
 
-        // Detalles del remitente y destinatario
-        $mail->setFrom($correo, "$nombre $apellidos");
-        $mail->addAddress($destinatario);
+        $mail = new PHPMailer();
+        // Configurar SMPT
+        $mail->isSMTP();
+        $mail->Host = "smtp.office365.com";
+        $mail->SMTPAuth = true;
+        $mail->Username = "umtim12@outlook.com";
+        $mail->Password = "RG2003SA";
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+        // Contenido
+        $mail->setFrom('umtim12@outlook.com','CartEase');
+        $mail->addAddress('umtim12@outlook.com','CartEase');
+        $mail->Subject = 'Tienes un nuevo mensaje';
+        
+        $mail->isHTML(true);
+        $mail->CharSet = 'UTF-8';
 
         // Contenido del correo
         $mail->isHTML(true); // Si el cuerpo del mensaje es HTML, cambia a true

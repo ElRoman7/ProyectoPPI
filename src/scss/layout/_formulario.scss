@@ -1,8 +1,11 @@
-.formulario{
+.formulario {
     background-color: var(--blanco);
-    margin: -2rem auto 5rem auto;
-    width: 80%;
-    padding: 5rem;
+    // margin: -2rem auto 5rem auto;
+    margin: 0 auto;
+    max-width: 80%;
+    // min-width: 10%;
+    // padding: 5rem;
+
     select {
         background-color: $blanco;
         color: $negro;
@@ -12,38 +15,59 @@
         border-radius: 5px;
         width: 200px;
     }    
-    .imagen-small{
+
+    .imagen-small {
         margin-left: 11rem;
         width: 10rem;
     }
 }
 
-
-.formulario fieldset{
+.formulario fieldset {
     border-radius: 13px;
     border-color: #9b9b9b;
 }
 
-.campo{
+.campo {
     display: flex;
     margin-bottom: 2rem;
     gap: 2rem;
-    
 }
 
+.campo__label {
+    display: none;
+    flex: 0 0 9rem;
+    text-align: right;
+}
+
+.campo__field {
+    flex: 1;
+    border: .3px solid $negro;
+    border-radius: .5rem;
+}
+
+.campo__field--textarea {
+    height: 20rem;
+}
+
+/* Media Query para pantallas más grandes (768px en adelante) */
 @media (min-width: 768px) {
-    .campo__label{
+    .campo {
+        flex-direction: row; /* Asegura que los elementos estén en línea en pantallas más grandes */
+    }
+
+    .campo__label {
+        display: block;
         flex: 0 0 9rem;
         text-align: right;
     }
 
-    .campo__field{
+    .campo__field {
         flex: 1;
         border: .3px solid $negro;
         border-radius: .5rem;
     }
 
-    .campo__field--textarea{
+    .campo__field--textarea {
         height: 20rem;
     }
 }
@@ -53,13 +77,6 @@
     font-size: 1.6rem;
     margin-left: 11rem;
 }
-
-// #mensajes-error {
-//     background-color: $rojo; /* Establece el color de fondo rojo o el que desees */
-//     color: white; /* Configura el color del texto */
-//     padding: 10px; /* Añade un relleno para que el mensaje sea visible */
-//     display: none; /* Inicialmente oculta el elemento */
-// }
 
 .alerta{
     display: none;

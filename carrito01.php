@@ -1,7 +1,7 @@
 <?php 
 
-    require "includes/config/conecta.php";
-    require "includes/funciones/funciones.php";
+    require_once "includes/config/conecta.php";
+    require_once "includes/funciones/funciones.php";
     $auth = UsuarioAutenticado();
     if(!$auth){
         header('Location: login.php?result=1');
@@ -21,8 +21,7 @@
     FROM pedidos
     JOIN pedidos_productos ON pedidos.id = pedidos_productos.id_pedido
     JOIN productos ON pedidos_productos.id_producto = productos.id
-    WHERE pedidos.id_usuario = $id_usuario AND pedidos.status = 0
-";
+    WHERE pedidos.id_usuario = $id_usuario AND pedidos.status = 0";
     $resultado = mysqli_query($db,$sql);
     include "includes/templates/header.php";
 ?>
